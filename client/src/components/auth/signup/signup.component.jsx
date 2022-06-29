@@ -50,7 +50,7 @@ const Login = ({ history }) => {
             history.push('/');
         }).catch(err => {
             console.log(err);
-            alert('something went wrong');
+            alert('something went wrong!');
         });
         
     }, [dispatch, history]);
@@ -61,6 +61,7 @@ const Login = ({ history }) => {
 
     return (
         <SignupForm className="signupForm" variants={variant} initial='initial' animate='animate' exit='exit'>
+            <h1 className="outerH">Affix_Untitled</h1>
             <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
@@ -71,8 +72,8 @@ const Login = ({ history }) => {
             >
                 <Form>
                     <h1>Signup</h1>
-                    <Input type='text' label='username' placeholder='enter username' id='userName' icon={BsPersonFill} />
-                    <Input type='number' label='phone no.' placeholder='enter phone no.' id='phoneNo' icon={MdPhone} />
+                    <Input type='text' label='username' placeholder='Enter username' id='userName' icon={BsPersonFill} />
+                    <Input type='number' label='phone no.' placeholder='Enter phone no.' id='phoneNo' icon={MdPhone} />
                     <Input type='password' label='password' placeholder='enter password' id='password' icon={RiLockPasswordFill} />
                     <div className="form-action">
                         <Button title='signup' type='submit' color='primary' />
@@ -97,6 +98,9 @@ const SignupForm = Styled(motion.div)`
     align-items:center;
     justify-content:center;
     text-align:center;
+    .outerH{
+        color:blue;
+    }
 
     &>form{
         &>h1{

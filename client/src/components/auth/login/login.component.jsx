@@ -57,6 +57,8 @@ const Login = ({ history }) => {
 
     return (
         <LoginForm className="loginForm" variants={variant} initial='initial' animate='animate' exit='exit'>
+            <h1 className="outerH">Affix_Untitled</h1>
+            
             <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
@@ -66,9 +68,10 @@ const Login = ({ history }) => {
                 onSubmit={submitHandler}
             >
                 <Form>
+                    
                     <h1>Login</h1>
-                    <Input type='text' label='username' placeholder='enter username' id='userName' icon={BsPersonFill} />
-                    <Input type='password' label='password' placeholder='enter password' id='password' icon={RiLockPasswordFill} />
+                    <Input type='text' label='username' placeholder='Enter username' id='userName' icon={BsPersonFill} />
+                    <Input type='password' label='password' placeholder='Enter password' id='password' icon={RiLockPasswordFill} />
                     <div className="form-action">
                         <Button title='Login' type='submit' color='primary' />
                         <Button title='Reset' type='reset' color='error' />
@@ -92,8 +95,12 @@ const LoginForm = Styled(motion.div)`
     align-items:center;
     justify-content:center;
     text-align:center;
-
+    
+    .outerH{
+        color:blue;
+    }
     &>form{
+       
         &>h1{
             margin-bottom:10px;
             color:${props => props.theme.primary.regular}
@@ -112,11 +119,13 @@ const LoginForm = Styled(motion.div)`
         &>*{
             display:inline-block;
             verticle-align:middle;
+             
         }
     }
 `;
 
 const variant = {
+    
     initial: {
         y: '-100%',
         opacity: 0

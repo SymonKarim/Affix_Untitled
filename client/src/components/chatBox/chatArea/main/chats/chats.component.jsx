@@ -17,6 +17,7 @@ const timeAgo = new TimeAgo('en-US');
 //for chat info use redux store user for user-info
 //use chatCon
 const Chat = (props) => {
+    console.log(props.media);
     const userId = useSelector(state => state.user._id);
     return (
         <>
