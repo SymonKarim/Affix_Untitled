@@ -60,7 +60,7 @@ const Container = Styled.div`
         align-items: center;
         justify-content: center;
         &>.imageContainer{
-            width:30%;
+            width:40%;
             height:80%;
             background-image:${props => `url(${background})`};
             background-position:center;
@@ -71,7 +71,7 @@ const Container = Styled.div`
             
         }
         &>.formContainer{
-            width:50%;
+            width:40%;
             height:80%;
             background-color:white;
             border-top-right-radius:10px;
