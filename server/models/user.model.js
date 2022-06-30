@@ -14,46 +14,47 @@ const pendingContactsSchema = new mongoose.Schema({
     }
 }, { _id: false });
 
-const userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema(
+  {
     userName: {
-        type: String,
-        required: [true, 'username is required in user model'],
-        unique: true
+      type: String,
+      required: [true, "username is required in user model"],
+      unique: true,
     },
     phoneNo: {
-        type: String,
-        required: [true, 'phone no. is required in user model'],
-        unique: true
+      type: String,
+      required: [true, "phone no. is required in user model"],
+      unique: true,
     },
     isVerified: {
-        type: Boolean,
-        default: false
+      type: Boolean,
+      default: false,
     },
     isOnline: {
-        type: Boolean,
-        default: false
+      type: Boolean,
+      default: false,
     },
     status: {
-        type: String,
-        default: 'Hey! drop me a message.'
+      type: String,
+      default: "Hey! drop me a message.",
     },
     contacts: [mongoose.Schema.Types.ObjectId],
     dp: {
-        type: String,
-        default: 'https://lwlies.com/wp-content/uploads/2017/04/avatar-2009-1108x0-c-default.jpg'
+      type: String,
+      default: process.env.defaultImage
     },
     blocked: [mongoose.Schema.Types.ObjectId],
     fav: [mongoose.Schema.Types.ObjectId],
     password: {
-        type: String,
-        required: [true, 'password is required in creating userSchema']
+      type: String,
+      required: [true, "password is required in creating userSchema"],
     },
     pendingContacts: [pendingContactsSchema],
     lastSeen: String,
-    chatList: [{
-
-    }]
-}, { timestamps: true });
+    chatList: [{}],
+  },
+  { timestamps: true }
+);
 
 userSchema.pre('save', async function (next) {
     if (!this.isModified('password')) {
