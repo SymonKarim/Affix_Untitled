@@ -20,6 +20,8 @@ import asyncRequest from '../../../util/asyncRequest';
 //importing services
 import { post_signup } from '../../../services/services';
 
+//importing log
+import pic from '../login/affix-logo2.png'
 //importing actions
 import { updateCurrentUser } from '../../../actions/actions';
 
@@ -61,7 +63,7 @@ const Login = ({ history }) => {
 
     return (
         <SignupForm className="signupForm" variants={variant} initial='initial' animate='animate' exit='exit'>
-            <h1 className="outerH">Affix_Untitled</h1>
+             <img  src={pic} alt="" />
             <Formik
                 initialValues={initialValues}
                 validationSchema={validationSchema}
@@ -92,15 +94,14 @@ const Login = ({ history }) => {
 const SignupForm = Styled(motion.div)`
     height:100%;
     width:100%;
+    margin-top: -45px;
     display:flex;
     flex-direction:column;
     flex-wrap:nowrap;
     align-items:center;
     justify-content:center;
     text-align:center;
-    .outerH{
-        color:blue;
-    }
+   
 
     &>form{
         &>h1{
@@ -110,7 +111,7 @@ const SignupForm = Styled(motion.div)`
         padding:30px;
         margin:20px;
         &>.form-action{
-            margin-top:30px;
+            margin-top:20px;
             display:flex;
             justify-content:space-around;
         }

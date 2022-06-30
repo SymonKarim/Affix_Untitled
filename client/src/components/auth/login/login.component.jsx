@@ -8,7 +8,7 @@ import Styled from 'styled-components';
 //importing reusable components
 import Input from '../../../reusableComponents/formikInput/formikInput.component';
 import Button from '../../../reusableComponents/button/button.component';
-
+import pic1 from './affix-logo2.png'
 //importing icons
 import { BsPersonFill } from 'react-icons/bs';
 import { RiLockPasswordFill } from 'react-icons/ri';
@@ -57,7 +57,7 @@ const Login = ({ history }) => {
 
     return (
         <LoginForm className="loginForm" variants={variant} initial='initial' animate='animate' exit='exit'>
-            <h1 className="outerH">Affix_Untitled</h1>
+            <img className='outerCss' src={pic1} alt="" />
             
             <Formik
                 initialValues={initialValues}
@@ -89,15 +89,15 @@ const Login = ({ history }) => {
 const LoginForm = Styled(motion.div)`
     height:100%;
     width:100%;
+    margin-top: -60px;
     display:flex;
     flex-direction:column;
     flex-wrap:nowrap;
     align-items:center;
     justify-content:center;
     text-align:center;
-    
-    .outerH{
-        color:blue;
+    &>outerCss{
+        margin-top:-10px;
     }
     &>form{
        

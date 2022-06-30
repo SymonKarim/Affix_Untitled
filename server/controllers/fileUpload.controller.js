@@ -23,7 +23,6 @@ const renameAndUpload = (file) => {
 
 module.exports.fileUploader = (req, res, next) => {
     try {
-
         if (!req.files) {
             next({ status: 400, message: 'send atleast one file' });
         }
